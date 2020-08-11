@@ -1,0 +1,58 @@
+# Install  dos patition
+lsblk #list disk block
+cfdisk to manage disk
+
+# format disk with 
+mkfs.ext4 /dev/sdxx
+#mount disk
+mount /dev/sdxx /mnt
+
+#install  
+pacstrap /mnt base base-devel linux linux-firmware networkmanager dhcpcd
+
+# Fstab Genarate an fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
+#install grub for mbr partion
+pacman -S grub
+grub-install  /dev/sxx
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# static ip with dhcpcd
+pacman -S dhcpcd
+cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak 	#backup
+#add this to file
+
+interface enp0s3
+static ip_address=192.168.0.x/24
+static routers=192.168.0.1
+static domain_name_servers=8.8.8.8
+# enable dhcp
+systemctl enable dhcpcd
+
+#add user
+useradd -mg users -G wheel,storage,power -s /bin/bash iryu
+passwd iryu
+chage -d 0 iryu
+
+#install sudo
+pacman -S sudo
+#enable user use sudo
+visudo
+#uncomment
+%whell ALL=(ALL) All
+# press x and then :wq
+
+
+#create swap file
+sudo dd if=/dev/zero of=/swapfile count=4096 bs=1MiB
+cd /
+ls -l
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+# make in active onboot by edit /etc/fstab
+/swapfile 	none 	swap 	defaults	0	0
+#check if swap active
+free -h
+
