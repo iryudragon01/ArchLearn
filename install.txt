@@ -56,3 +56,14 @@ sudo swapon /swapfile
 #check if swap active
 free -h
 
+# install p7zip
+# run shell with 7z
+
+# fix ntsf
+sudo ntfs
+# mount ntsf in /etc/fstab
+# search UUID
+blkid | greb UUID=
+# add to /etc/fstab
+UUID=01D158CC7C2A61A0 /mnt/Apps ntfs rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000 0 0
+
