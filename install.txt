@@ -1,3 +1,4 @@
+#blogger iryudragon02
 # Install  dos patition
 lsblk #list disk block
 cfdisk to manage disk
@@ -60,10 +61,14 @@ free -h
 # run shell with 7z
 
 # fix ntsf
-sudo ntfs
+sudo ntfsfix /dev/sdXY
 # mount ntsf in /etc/fstab
 # search UUID
-blkid | greb UUID=
+sudo blkid | grep UUID=
 # add to /etc/fstab
 UUID=01D158CC7C2A61A0 /mnt/Apps ntfs rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000 0 0
 
+# share file with samba
+sudo pacman -S samba
+# create file /etc/samba/smb.conf
+# detail in smb.conf file
