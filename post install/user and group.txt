@@ -1,0 +1,41 @@
+# view group 
+cat /etc/group
+
+# view users
+cat /etc/passwd
+
+#change password
+passwd "username"
+
+#make user change password next login 
+sudo passwd -e "username"
+
+# create new user
+sudo useradd "username"
+
+# delete user
+sudo userdel "username"
+
+# add user to groups
+sudo usermod -a -G "groupname 1","groupname 2",...  username
+
+
+# Special permittion "s"
+[iryu@iryu-pc ~]$ ls -l /usr/bin/passwd 
+-rwsr-xr-x 1 root root 63640 ก.ค.  16 03:15 /usr/bin/passwd
+# s = set your id
+sudo chmod u+s "file name"	# add permition to owner
+sudo chmod 4xxx "file name" # xxx is own group others permittion
+
+# set special permittion at group
+sudo chmod g+s "file name"
+sudo chmod 2xxx "filename"
+
+
+
+# sticky bit permittion 
+# permittion you can write the file but cannot delete it only owner or root can delete it
+# symbolic command is "t" numberic is "1"
+sudo chmod +t "folder name"
+sudo chmod 1xxx "folder name"
+

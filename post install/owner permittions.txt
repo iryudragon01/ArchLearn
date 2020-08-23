@@ -1,0 +1,47 @@
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+
+u	user	file owner
+g	group	members of the file's group
+o	others	users who are neither the file's owner nor members of the file's group
+a	all
+
+r=4 =read
+w=2 =write
+x=1=execute
+
+# examples
+chmod a+x test.txt    #all group can execute file
+chmod o-w test.txt    # others can not write to file
+chmod u+w test.txt    # owner can write file
+chmod u+rx text.txt 	#owner can read and execute file
+
+chmod 777 test.txt #all group can read ,write,execute
+chmod 644 test.txt #owner can read and write, group and other can read
+
+#change owner with chown
+sudo chwon "username" "filename"
+
+# change group
+sudo chgrp "group name" "file name"
+-rwsr-xr-x 1 root root 63640 ก.ค.  16 03:15 /usr/bin/passwd
+-rwsr-xr-x 1 root root 63640 ก.ค.  16 03:15 /usr/bin/passwd
