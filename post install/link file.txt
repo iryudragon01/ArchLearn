@@ -1,0 +1,6 @@
+link file with ln
+# softlink link file with name cannot change name
+ln -s filename linkname
+
+# hardlink you can change link
+ln filename linkname

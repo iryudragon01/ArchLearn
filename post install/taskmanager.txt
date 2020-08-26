@@ -1,0 +1,13 @@
+ps -x # task list
+ps -ef	# full list
+kill pid  # terminate process
+kill -KILL pid  # force terminate process
+kill -TSTP  pid  # suspend  process
+kill -CONT  pid  # continue  process
+
+top	# list most usage resourec
+q	# to quit 
+
+uptime	# show time since boot machine
+
+lsof	# listing open file

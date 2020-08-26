@@ -1,0 +1,13 @@
+h j k l for move cursure
+i for insert mode
+esc for back to normal mode
+# in normal mode
+gg for go to first line
+G  go to last line
+3G go to line number 3
+dd for delete line
+x for delete
+u for undo
+:wq for save and quit
+:q! quit without edit
+:q quit

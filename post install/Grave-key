@@ -1,0 +1,3 @@
+extract grave-key
+sudo ./shell.sh
+change language with grave-key
