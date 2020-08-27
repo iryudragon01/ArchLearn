@@ -1,0 +1,3 @@
+find . -name *.tmp -exec rm {} # search *.tmp in current and subfolder and then remove
+grep keyword filename   # search for word in file
+grep -r keyword   # search for word in all text in directory

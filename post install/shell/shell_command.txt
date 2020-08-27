@@ -1,0 +1,7 @@
+$PATH variable keep directory path  of bin directory
+echo $PATH
+echo /home/iryu/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+which command    # show location of command
+which echo
+/usr/bin/echo
