@@ -1,0 +1,39 @@
+https://missing.csail.mit.edu/2020/shell-tools/
+create mcd.sh
+create function mcd
+activate by
+
+source mcd.sh	# add command
+mcd test	# call mcd function with test argument
+		# mcd function create folder name test 
+		
+# $_		last argument of previos command
+# $0		command name
+# $1		first argument
+# !! 		get last command
+
+# ||	or operator  
+# or example
+false || echo "Oops fail"	# print  Oops fail 
+true || echo "Will be not be printed"
+true && echo "things went well"
+false && echo "Will be not be printed"
+true && echo "every thing when well"
+
+
+foo=$(pwd)		# set foo variable with  current path 
+
+# multiple argument
+touch file{a,b,c}.txt = touch filea.txt fileb.txt filec.txt
+mkdir drive{a,b,c,d} #create drive drivea,driveb,drivec,drived
+mkdir {foo,bar}	#create folder foo and bar
+touch {foo,bar}/{a..j}		#create file name a to j in folder foo and bar
+
+diff <(ls foo) <(ls bar)	# search for differant between folder foo and bar
+
+# check syntex error 
+shellcheck "file.sh"
+
+# check argument for command
+man "command"
+man ls		#check ls argument

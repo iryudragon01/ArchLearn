@@ -1,0 +1,9 @@
+systemctl list-units 	# list 
+systemctl list-units | grep .service # list service only
+
+systemctl enable "service name"
+systemctl disable "service name"
+systemctl start "service name"
+systemctl stop "service name"
+
+systemctl --failed 	# view failed service
