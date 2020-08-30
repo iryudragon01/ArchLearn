@@ -1,0 +1,5 @@
+declare -p			# list declare variable
+
+declare -p "name"		# create variable
+declare -p "name"="value"	# create variable
+declare -r "name"		# create variable with readonly

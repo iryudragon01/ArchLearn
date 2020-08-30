@@ -1,0 +1,6 @@
+mkdir	foldername
+mkdir -p foldername 	# create exist folder
+
+if [ -d "$foldername" ]		# use if to check if directory exist
+if [ -f "$filename" ]		# use if to check if file exist
+

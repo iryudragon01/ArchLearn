@@ -22,5 +22,15 @@ then
 	echo "$st1 is bigger than $st2"
 fi
 
+# concate strings
+
+st3=$st1$st2
+echo "concate strings st1 and st2 : $st3"
+
+
+# convert to capital charector
+
+echo ${st1^}		# capital first charecter 
+echo ${st1^^}		# capitals all charecter
 
 
