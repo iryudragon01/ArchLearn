@@ -1,0 +1,5 @@
+$1		script name
+$1,$2,$3.... 	argument number 1,2,3,....
+$@		arrays of arguments
+@#		len of arguments
+
