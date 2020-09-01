@@ -1,0 +1,12 @@
+
+iptable -L			# list
+# write iptables with -A it add to the bottom of table
+# write with -I add to the top table
+# iptalbes read from top to bottom until meet the match condition
+iptables -P FORWARD drop	# -P policy 
+iptables -A INPUT -s 192.168.0.242 -j DROP	# drop input from 242
+iptables -A INPUT -s 192.168.0.0/24 -p tcp --destination-port 25 -j DROP  	# drop port 25 (email) 
+iptables -I INPUT -s 192.168.0.66 -j ACCEPT					# accecpt every thing from 66
+
+# delete table by
+iptable -D INPUT "Index of rule table"

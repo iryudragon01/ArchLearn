@@ -1,0 +1,11 @@
+uname -r #chech linux version
+
+pacman -S virtualbox 
+# seletc version to install
+
+#add user to virtualbox
+sudo gpasswd -a iryu vboxusers
+
+# create file /etc/modules-load.d/virtualbox.conf
+vboxdrv
+vboxnetflt	# for bridge network
