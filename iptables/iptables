@@ -10,3 +10,17 @@ iptables -I INPUT -s 192.168.0.66 -j ACCEPT					# accecpt every thing from 66
 
 # delete table by
 iptable -D INPUT "Index of rule table"
+
+
+tcpdump -i enp0s3 -n 'tcp'	# list connecting on enp9s3 with tcp
+tcpdump -i enp0s3 -n 'tcp port 80'	# list connecting on enp9s3 with tcp
+
+
+# nat to wan
+iptables -t nat -A POSTROUTING -o "wan" -j MASQUERADE
+#
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT	# enable stateful packet inspection 
+
+# forward port
+iptables -t nat -A PREROUTING -p tcp --dport 22 -j DNAT --to-destination 192.168.1.52:22
+

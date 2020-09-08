@@ -1,0 +1,9 @@
+
+   85  vim sysctl.conf 
+  
+   91  sysctl -p /etc/sysctl.conf 
+   92  iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
+   93  iptable -A FORWARD -i enp0s8 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT
+   94  iptables -A FORWARD -i enp0s8 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT
+   95  iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+   96  history > /iptable_iryu.setup

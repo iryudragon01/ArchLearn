@@ -1,0 +1,46 @@
+    1  ip addr
+    2  systemctl --type=service
+    3  ls /etc/
+    4  ls /etc/passwd
+    5  cat etc/passwd
+    6  ls /etc/passwd
+    7  ls /etc/passwd/
+    8  cd /etc/passwd
+    9  cat /etc/group
+   10  useradd iryu
+   11  usermod -a -G wheel iryu
+   12  cd /etc/ssh/
+   13  ls
+   14  passwd iryu
+   15  ip addr
+   16  cd /etc/sysconfig/
+   17  ls
+   18  cd network-scripts/
+   19  ls
+   20  vim ifcfg-enp0s3
+   21  yum install vim
+   22  vim ifcfg-enp0s3
+   23  vim ifcfg-enp0s8
+   24  ip addr
+   25  vim ifcfg-enp0s8
+   26  ip link set enp0s8 up
+   27  ip addr 
+   28  reboot now
+   29  mkdir /home/iryu/centos_gateway
+   30  cp ip_forward.conf /home/iryu/centos_gateway/
+   31  firewall-cmd --permanent --direct --passthrough ipv4 -t nat -I POSTROUTING -o enp0s3 -j MASQUERADE -s 192.168.1.0/24
+   32  firewall-cmd --change-interface=enp0s3 --zone=external --permanent
+   33  firewall-cmd --set-default-zone=internal
+   34  firewall-cmd --complete-reload
+   35  systemctl restart network && systemctl restart firewalld
+   36  systemctl restart network && systemctl restart firewalld
+   37  reboot now
+   38  cd /
+   39  iptables -L
+   40  rpm -qa | grep firewalld
+   41  rmp -qc firewalld
+   42  rpm -qc firewalld
+   43  cd /home/iryu/
+   44  ls
+   45  scp -r centos_gateway/ iryu@192.168.0.57:
+   46  history > command
