@@ -1,0 +1,2 @@
+makepkg -Acs
+sudo pacman -U x.pkg.tar.xz
